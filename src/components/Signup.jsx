@@ -41,6 +41,11 @@ export default function Signup() {
     if (acquisitionChannel.length === 0) {
       errors.push("Please select at least one acquisition channel");
     }
+
+    if (errors.length > 0) {
+      return { errors };
+    }
+    return { errors: null };
   }
   return (
     <form action={signupAction}>
