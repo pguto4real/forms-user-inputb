@@ -1,4 +1,9 @@
-import { hasMinLength, isEmail, isEqualToOtherValue, isNotEmpty } from "../util/validation";
+import {
+  hasMinLength,
+  isEmail,
+  isEqualToOtherValue,
+  isNotEmpty,
+} from "../util/validation";
 
 export default function Signup() {
   function signupAction(formData) {
@@ -17,15 +22,16 @@ export default function Signup() {
     if (!isEmail(email)) {
       errors.push("Invalid email Address");
     }
-    if (!isNotEmpty(password) || !hasMinLength(password,6)) {
+    if (!isNotEmpty(password) || !hasMinLength(password, 6)) {
       errors.push("You must provide a password with at least six characters");
     }
-    if (!isEqualToOtherValue(password,confirmPassword)) {
-      errors.push("YPasswords do not match");
+    if (!isEqualToOtherValue(password, confirmPassword)) {
+      errors.push("Passwords do not match");
     }
-    
-   
 
+    if (!isNotEmpty(firstName) || !isNotEmpty(lastName)) {
+      errors.push("Please provide both your first name and last name");
+    }
   }
   return (
     <form action={signupAction}>
