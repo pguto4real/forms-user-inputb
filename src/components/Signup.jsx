@@ -38,6 +38,9 @@ export default function Signup() {
     if (!terms) {
       errors.push("You must agree to the terms and conditions");
     }
+    if(acquisitionChannel.length===0){
+      errors.push("Please select at least one acquisition channel")
+    }
   }
   return (
     <form action={signupAction}>
