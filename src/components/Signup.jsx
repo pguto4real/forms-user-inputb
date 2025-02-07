@@ -1,3 +1,5 @@
+import { isEmail } from "../util/validation";
+
 export default function Signup() {
   function signupAction(formData) {
     const email = formData.get("email");
@@ -9,6 +11,15 @@ export default function Signup() {
     const terms = formData.get("terms");
     const acquisitionChannel = formData.getAll("acquisition");
     console.log(enteredEmail);
+
+    let errors = [];
+
+    if (!isEmail(email)) {
+      errors.push("Invalid email Address");
+    }
+    if (!isEmail(email)) {
+      errors.push("Invalid email Address");
+    }
   }
   return (
     <form action={signupAction}>
