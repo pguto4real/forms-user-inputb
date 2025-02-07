@@ -32,6 +32,9 @@ export default function Signup() {
     if (!isNotEmpty(firstName) || !isNotEmpty(lastName)) {
       errors.push("Please provide both your first name and last name");
     }
+    if (!isNotEmpty(role) ) {
+      errors.push("Please select a role");
+    }
   }
   return (
     <form action={signupAction}>
