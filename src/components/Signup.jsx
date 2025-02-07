@@ -35,6 +35,9 @@ export default function Signup() {
     if (!isNotEmpty(role) ) {
       errors.push("Please select a role");
     }
+    if (!terms) {
+      errors.push("You must agree to the terms and conditions");
+    }
   }
   return (
     <form action={signupAction}>
