@@ -1,4 +1,4 @@
-import { isEmail } from "../util/validation";
+import { hasMinLength, isEmail, isEqualToOtherValue, isNotEmpty } from "../util/validation";
 
 export default function Signup() {
   function signupAction(formData) {
@@ -17,9 +17,11 @@ export default function Signup() {
     if (!isEmail(email)) {
       errors.push("Invalid email Address");
     }
-    if (!isEmail(email)) {
-      errors.push("Invalid email Address");
+    if (!isNotEmpty(password) || !hasMinLength(password,6)) {
+      errors.push("You must provide a password with at least six characters");
     }
+    
+
   }
   return (
     <form action={signupAction}>
