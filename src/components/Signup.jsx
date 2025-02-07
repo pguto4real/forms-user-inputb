@@ -32,14 +32,14 @@ export default function Signup() {
     if (!isNotEmpty(firstName) || !isNotEmpty(lastName)) {
       errors.push("Please provide both your first name and last name");
     }
-    if (!isNotEmpty(role) ) {
+    if (!isNotEmpty(role)) {
       errors.push("Please select a role");
     }
     if (!terms) {
       errors.push("You must agree to the terms and conditions");
     }
-    if(acquisitionChannel.length===0){
-      errors.push("Please select at least one acquisition channel")
+    if (acquisitionChannel.length === 0) {
+      errors.push("Please select at least one acquisition channel");
     }
   }
   return (
