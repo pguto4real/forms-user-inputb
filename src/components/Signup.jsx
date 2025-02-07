@@ -20,7 +20,11 @@ export default function Signup() {
     if (!isNotEmpty(password) || !hasMinLength(password,6)) {
       errors.push("You must provide a password with at least six characters");
     }
+    if (!isEqualToOtherValue(password,confirmPassword)) {
+      errors.push("YPasswords do not match");
+    }
     
+   
 
   }
   return (
